@@ -23,8 +23,6 @@ RSpec.describe User, type: :model do
     end
 
     it "does not create a user if a password length is less than 5 characters" do
-      # @user = User.create(name: 'User4', email: 'user4@gmail.com',  password: 'pass', password_confirmation: 'pass')
-      # @user.save
       @user.password = '1234'
       expect(@user).to_not be_valid
     end

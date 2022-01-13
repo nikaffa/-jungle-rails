@@ -19,6 +19,17 @@ Rails.application.routes.draw do
     resources :categories, except: [:edit, :update, :show]
   end
 
+  # register route (submit a form and creates a new user)
+  get '/register' => 'users#new'
+  post '/users' => 'users#create'
+
+  # login routes (creates session)
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+
+  #logout session (destroys session)
+  get '/logout' => 'sessions#destroy'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
